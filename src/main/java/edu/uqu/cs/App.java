@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+import java.util.Scanner;
 public class App{
 
 /**  
@@ -43,16 +43,104 @@ public class App{
 *
 */
  
-    public static void main(String [] args) {
+
+
+    /**
+     * @param args the command line arguments
+     */
+
+
+    public static void twisters() {
+
+        for (int L = 1; L <= 110; L++) {
+
+            if (L % 2 == 0) {
+                System.out.print("Tweetle");
+
+                if (L % 4 == 0) {
+                    System.out.print("Beetle");
+                }
+
+                if (L % 6 == 0) {
+                    System.out.print("Poodle");
+                }
+            }
+            else {
+                System.out.print(" " + L + " ");
+            }
+        }
+    }
+
+    public static void phoneKeypad(String text) {
+
+        // this String var will hold the result
+        // it's String and not int so that when adding numbers 
+        // they are added next to each other and not math addition
+        String r = "";
         
+        // loop for each char in the text
+        for (char ch : text.toUpperCase().toCharArray()) {
+            // switch case for each 3 letters
+            switch (ch) {
+                case 'A':
+                case 'B':
+                case 'C':
+                    r += "2";
+                    break;
+                case 'D':
+                case 'E':
+                case 'F':
+                    r += "3";
+                    break;
+                case 'G':
+                case 'H':
+                case 'I':
+                    r += "4";
+                    break;
+                case 'J':
+                case 'K':
+                case 'L':
+                    r += "5";
+                    break;
+                case 'M':
+                case 'N':
+                case 'O':
+                    r += "6";
+                    break;
+                case 'P':
+                case 'Q':
+                case 'R':
+                case 'S':
+                    r += "7";
+                    break;
+                case 'T':
+                case 'U':
+                case 'V':
+                    r += "8";
+                    break;
+                case 'W':
+                case 'X':
+                case 'Y':
+                case 'Z':
+                    r += "9";
+                    break;
+            }
+        }
 
-        /* Write your code here */
-     
-       //call method twisters()
-       //prompt user to enter a string 
-       //call method phoneKeypad(string)
+        System.out.println(r);
+    }
 
+    public static void main(String [] args) {
+
+        twisters();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a string >> ");
+        phoneKeypad(scan.nextLine());
 
     }
 
 }
+
+    
+        
+     
